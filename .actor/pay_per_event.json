@@ -1,22 +1,17 @@
 {
-    "audit-call": {
-        "eventTitle": "IaC audit call",
-        "eventDescription": "Charged once per audit_compose, audit_dockerfile, audit_github_actions, audit_all, or per-category check call.",
-        "eventPriceUsd": 0.02
+    "pack-audit": {
+        "eventTitle": "Full IaC pack audit",
+        "eventDescription": "All sub-auditors (compose + dockerfile + gha + postcode) over the input bundle",
+        "eventPriceUsd": 0.10
+    },
+    "single-domain-audit": {
+        "eventTitle": "Single-domain audit",
+        "eventDescription": "One sub-auditor over its inputs",
+        "eventPriceUsd": 0.05
     },
     "list-checks": {
-        "eventTitle": "List available checks",
-        "eventDescription": "Charged for discovery calls to list_checks_compose, list_checks_dockerfile, list_checks_github_actions, or list_all_checks.",
-        "eventPriceUsd": 0.005
-    },
-    "lookup-call": {
-        "eventTitle": "HU postcode lookup",
-        "eventDescription": "Charged once per call to validate_postcode, lookup_postcode, lookup_city, validate_address, or budapest_district_lookup.",
-        "eventPriceUsd": 0.001
-    },
-    "bulk-call": {
-        "eventTitle": "HU postcode bulk listing",
-        "eventDescription": "Charged once per call to list_postcodes_in_county.",
+        "eventTitle": "List checks catalog",
+        "eventDescription": "Return catalog for one or all sub-auditors",
         "eventPriceUsd": 0.005
     }
 }

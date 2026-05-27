@@ -3,7 +3,7 @@
 	"actorSpecification": 1,
 	"name": "iac-audit-pack",
 	"title": "Unbearable IaC Audit Pack",
-	"description": "All four Unbearable TechTips audit Actors under one MCP endpoint: docker-compose (25 checks), Dockerfile (18 checks), GitHub Actions (13 checks), HU postcode validator (5 tools). Snyk-comparable IaC coverage at 10x cheaper. $19/mo unlimited individual audits. Built by Unbearable TechTips.",
+	"description": "All four Unbearable TechTips audit Actors under one MCP endpoint: docker-compose (25 checks), Dockerfile (18 checks), GitHub Actions (13 checks), HU postcode validator (5 tools). Snyk-comparable IaC coverage at 10x cheaper. Pay-per-event. Built by Unbearable TechTips.",
 	"version": "0.1",
 	"buildTag": "latest",
 	"usesStandbyMode": true,
