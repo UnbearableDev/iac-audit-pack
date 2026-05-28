@@ -11,6 +11,7 @@ metadata:
   tags: [docker, dockerfile, github-actions, kubernetes, iac, security, audit, devops, ci-cd, mcp]
   license: MIT
   publisher: unbearabledev
+  icon: icon.svg
   homepage: https://github.com/UnbearableDev/iac-audit-pack
 workflow_prompts:
   - name: audit_compose_local
