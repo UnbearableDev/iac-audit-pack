@@ -1,8 +1,8 @@
 # Unbearable IaC Audit Pack
 
-**Unbearable IaC Audit Pack** — all four audit Actors under one MCP endpoint. Snyk-comparable scope at 10x cheaper. $19/mo unlimited individual audits.
+**Unbearable IaC Audit Pack** — all four audit Actors under one MCP endpoint. Snyk-comparable scope at a fraction of the cost. Pay-per-event — only billed when a tool is actually called.
 
-56 checks. 19 categories. 4 audit engines. 1 MCP endpoint. One subscription.
+56 checks. 19 categories. 4 audit engines. 1 MCP endpoint.
 
 ---
 
@@ -97,9 +97,13 @@ Plus two bundle-only tools:
 
 ## Pricing
 
-**$19/mo unlimited individual audits** — flat monthly rental via Apify Console.
+| Event | USD |
+|-------|-----|
+| `audit_all` or any single-domain audit call | $0.10 |
+| Single-domain audit (`audit_compose`, `audit_dockerfile`, `audit_github_actions`) | $0.05 |
+| `list_checks` / discovery calls | $0.005 |
 
-No per-call billing. Run as many audits as you need. Cancel anytime.
+Pay-per-event — no subscription, no monthly minimums. You pay only when a tool is invoked.
 
 ## Architecture
 
@@ -109,4 +113,4 @@ See `DESIGN.md` for the full rationale.
 
 ---
 
-Built by Noel @ Unbearable TechTips — more like this in the weekly newsletter [link].
+Built by Noel @ Unbearable TechTips — more like this in the [weekly newsletter](https://unbearabletechtips.beehiiv.com).
