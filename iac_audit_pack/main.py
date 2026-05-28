@@ -49,6 +49,7 @@ from postcode import tools as postcode_tools
 
 Severity = Literal["high", "medium", "low", "info"]
 DEFAULT_MIN_SEVERITY: Severity = "low"
+_ANNOTATIONS = {    "readOnlyHint": True,    "destructiveHint": False,    "idempotentHint": True,    "openWorldHint": False,}
 
 
 # ---------------------------------------------------------------------------
@@ -172,7 +173,7 @@ def get_server() -> FastMCP:
             },
         }
 
-    @server.tool()
+    @server.tool(annotations=_ANNOTATIONS)
     async def audit_compose(
         compose_yaml: str | None = None,
         compose_url: str | None = None,
@@ -209,9 +210,9 @@ def get_server() -> FastMCP:
         return _tool
 
     for _cat in compose_checks.ALL_CATEGORIES:
-        server.tool()(_make_compose_category_tool(_cat))
+        server.tool(annotations=_ANNOTATIONS)(_make_compose_category_tool(_cat))
 
-    @server.tool()
+    @server.tool(annotations=_ANNOTATIONS)
     async def list_checks_compose(category: str | None = None) -> dict[str, Any]:
         """List the full catalog of docker-compose audit checks (25 checks, 9 categories).
 
@@ -282,7 +283,7 @@ def get_server() -> FastMCP:
             },
         }
 
-    @server.tool()
+    @server.tool(annotations=_ANNOTATIONS)
     async def audit_dockerfile(
         dockerfile_content: str | None = None,
         dockerfile_url: str | None = None,
@@ -319,9 +320,9 @@ def get_server() -> FastMCP:
         return _tool
 
     for _cat in df_checks.ALL_CATEGORIES:
-        server.tool()(_make_dockerfile_category_tool(_cat))
+        server.tool(annotations=_ANNOTATIONS)(_make_dockerfile_category_tool(_cat))
 
-    @server.tool()
+    @server.tool(annotations=_ANNOTATIONS)
     async def list_checks_dockerfile(category: str | None = None) -> dict[str, Any]:
         """List the full catalog of Dockerfile audit checks (18 checks, 5 categories).
 
@@ -392,7 +393,7 @@ def get_server() -> FastMCP:
             },
         }
 
-    @server.tool()
+    @server.tool(annotations=_ANNOTATIONS)
     async def audit_github_actions(
         workflow_yaml: str | None = None,
         workflow_url: str | None = None,
@@ -430,9 +431,9 @@ def get_server() -> FastMCP:
         return _tool
 
     for _cat in gha_checks.ALL_CATEGORIES:
-        server.tool()(_make_gha_category_tool(_cat))
+        server.tool(annotations=_ANNOTATIONS)(_make_gha_category_tool(_cat))
 
-    @server.tool()
+    @server.tool(annotations=_ANNOTATIONS)
     async def list_checks_github_actions(category: str | None = None) -> dict[str, Any]:
         """List the full catalog of GitHub Actions audit checks (13 checks, 5 categories).
 
@@ -457,7 +458,7 @@ def get_server() -> FastMCP:
     # 4. HU POSTCODE VALIDATOR
     # ===================================================================
 
-    @server.tool()
+    @server.tool(annotations=_ANNOTATIONS)
     async def validate_postcode(postcode: int | str) -> dict[str, Any]:
         """Return settlement(s) and county for a Hungarian postcode.
 
@@ -467,7 +468,7 @@ def get_server() -> FastMCP:
         await Actor.charge("lookup-call")
         return await postcode_tools.lookup_postcode(postcode)
 
-    @server.tool()
+    @server.tool(annotations=_ANNOTATIONS)
     async def lookup_postcode(postcode: int | str) -> dict[str, Any]:
         """Alias for validate_postcode — return settlement(s) and county for a HU postcode.
 
@@ -477,7 +478,7 @@ def get_server() -> FastMCP:
         await Actor.charge("lookup-call")
         return await postcode_tools.lookup_postcode(postcode)
 
-    @server.tool()
+    @server.tool(annotations=_ANNOTATIONS)
     async def lookup_city(city: str) -> dict[str, Any]:
         """Return all postcodes for a Hungarian city/settlement (diacritic-insensitive).
 
@@ -487,7 +488,7 @@ def get_server() -> FastMCP:
         await Actor.charge("lookup-call")
         return await postcode_tools.lookup_city(city)
 
-    @server.tool()
+    @server.tool(annotations=_ANNOTATIONS)
     async def validate_address(postcode: int | str, city: str) -> dict[str, Any]:
         """Validate that postcode and city are a valid Hungarian pairing.
 
@@ -498,7 +499,7 @@ def get_server() -> FastMCP:
         await Actor.charge("lookup-call")
         return await postcode_tools.validate_address(postcode, city)
 
-    @server.tool()
+    @server.tool(annotations=_ANNOTATIONS)
     async def list_postcodes_in_county(county_name: str) -> dict[str, Any]:
         """List all postcodes in a given Hungarian county (varmegye).
 
@@ -508,7 +509,7 @@ def get_server() -> FastMCP:
         await Actor.charge("bulk-call")
         return await postcode_tools.list_postcodes_in_county(county_name)
 
-    @server.tool()
+    @server.tool(annotations=_ANNOTATIONS)
     async def budapest_district_lookup(district_number: int | str) -> dict[str, Any]:
         """Return Budapest postcodes for a district (I-XXIII or 1-23).
 
@@ -522,7 +523,7 @@ def get_server() -> FastMCP:
     # 5. AGGREGATION: audit_all
     # ===================================================================
 
-    @server.tool()
+    @server.tool(annotations=_ANNOTATIONS)
     async def audit_all(
         files: dict[str, str],
         min_severity: Severity = DEFAULT_MIN_SEVERITY,
@@ -649,7 +650,7 @@ def get_server() -> FastMCP:
     # 6. DISCOVERY: list_all_checks
     # ===================================================================
 
-    @server.tool()
+    @server.tool(annotations=_ANNOTATIONS)
     async def list_all_checks() -> dict[str, Any]:
         """List every check across all three audit packages (compose, dockerfile, GHA).
 
