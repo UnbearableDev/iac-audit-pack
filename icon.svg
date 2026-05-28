@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- iac-audit-pack: all four outer nodes highlighted, mixed accents, center N2 white — the "whole family" icon -->
+  <rect width="200" height="200" rx="31" fill="#0F172A"/>
+  <!-- All edges from N2 — each in the accent of the target node -->
+  <line x1="100" y1="100" x2="56" y2="56" stroke="#06B6D4" stroke-width="6" stroke-linecap="round"/>
+  <line x1="100" y1="100" x2="144" y2="63" stroke="#3B82F6" stroke-width="6" stroke-linecap="round"/>
+  <line x1="100" y1="100" x2="69" y2="150" stroke="#8B5CF6" stroke-width="6" stroke-linecap="round"/>
+  <line x1="100" y1="100" x2="150" y2="144" stroke="#10B981" stroke-width="6" stroke-linecap="round"/>
+  <!-- N1 highlighted: cyan -->
+  <circle cx="56" cy="56" r="16" fill="#06B6D4"/>
+  <circle cx="56" cy="56" r="7" fill="#0F172A"/>
+  <!-- N2 center: white (the pack orchestrates all) -->
+  <circle cx="100" cy="100" r="13" fill="#FFFFFF"/>
+  <!-- N3 highlighted: blue -->
+  <circle cx="144" cy="63" r="16" fill="#3B82F6"/>
+  <circle cx="144" cy="63" r="7" fill="#0F172A"/>
+  <!-- N4 highlighted: violet -->
+  <circle cx="69" cy="150" r="16" fill="#8B5CF6"/>
+  <circle cx="69" cy="150" r="7" fill="#0F172A"/>
+  <!-- N5 highlighted: emerald -->
+  <circle cx="150" cy="144" r="16" fill="#10B981"/>
+  <circle cx="150" cy="144" r="7" fill="#0F172A"/>
+  <!-- Pack motif: three overlapping small audit-chip rectangles centered on N2 -->
+  <rect x="82" y="84" width="36" height="22" rx="5" fill="none" stroke="#E2E8F0" stroke-width="2" opacity="0.2"/>
+  <rect x="86" y="88" width="36" height="22" rx="5" fill="none" stroke="#E2E8F0" stroke-width="2" opacity="0.15"/>
+  <rect x="90" y="92" width="36" height="22" rx="5" fill="none" stroke="#E2E8F0" stroke-width="2" opacity="0.1"/>
+</svg>
