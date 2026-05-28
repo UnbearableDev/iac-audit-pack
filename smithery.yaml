@@ -1,0 +1,24 @@
+runtime: external
+type: streamable-http
+url: https://unbearable-dev--iac-audit-pack.apify.actor/mcp
+auth:
+  type: bearer
+  description: Apify API token (any Apify user can generate one in their console)
+metadata:
+  name: iac-audit-pack
+  display_name: Unbearable IaC Audit Pack
+  description: All four audit MCPs under one endpoint — docker-compose (25 checks), Dockerfile (18), GitHub Actions (13), HU postcode (5 tools). Snyk-comparable IaC coverage.
+  tags: [docker, dockerfile, github-actions, kubernetes, iac, security, audit, devops, ci-cd, mcp]
+  license: MIT
+  publisher: unbearabledev
+  homepage: https://github.com/UnbearableDev/iac-audit-pack
+workflow_prompts:
+  - name: audit_compose_local
+    description: Audit a docker-compose.yml from local content for security misconfigs. Returns findings with severity, category, and YAML fix snippets.
+    prompt: Audit my docker-compose.yml for security issues. Here is the content: <paste YAML here>
+  - name: audit_github_actions_url
+    description: Audit a GitHub Actions workflow via raw URL. Checks supply-chain risks, token leaks, unpinned actions, and broad permissions.
+    prompt: Audit the GitHub Actions workflow at this raw URL for security issues: https://raw.githubusercontent.com/<owner>/<repo>/main/.github/workflows/ci.yml
+  - name: list_all_checks
+    description: Discover all checks across all four audit packages in one call. Useful before a targeted audit or to explain a specific check ID.
+    prompt: List all checks available across docker-compose, Dockerfile, and GitHub Actions audits. What categories does each package cover?

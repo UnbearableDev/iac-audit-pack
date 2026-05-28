@@ -20,5 +20,9 @@
 		"required": []
 	},
 	"dockerfile": "../Dockerfile",
-	"webServerMcpPath": "/mcp"
+	"webServerMcpPath": "/mcp",
+	"categories": [
+		"DEVELOPER_TOOLS",
+		"SECURITY"
+	]
 }
