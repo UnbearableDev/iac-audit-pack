@@ -113,4 +113,4 @@ See `DESIGN.md` for the full rationale.
 
 ---
 
-Built by Noel @ Unbearable TechTips — more like this in the [weekly newsletter](https://unbearabletechtips.beehiiv.com).
+Built by Noel @ Unbearable Labs — more like this in the [weekly newsletter](https://unbearabletechtips.beehiiv.com).
